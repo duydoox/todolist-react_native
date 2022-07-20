@@ -27,8 +27,7 @@ export default function AddTask() {
 
 const styles = StyleSheet.create({
     writeTaskWrapper: {
-        position: 'absolute',
-        bottom: 30,
+        flex: 1,
         width: '100%',
         flexDirection: 'row',
         alignItems: 'center',

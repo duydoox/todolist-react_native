@@ -1,5 +1,5 @@
-import { View, Text , StyleSheet} from 'react-native'
-import React, {useContext} from 'react'
+import { View, Text, StyleSheet, ScrollView } from 'react-native'
+import React, { useContext } from 'react'
 import Task from './Task'
 import { taskContext } from '../context/TaskContext';
 
@@ -8,17 +8,20 @@ export default function ListTask() {
     return (
         <View style={styles.tasksWrapper}>
             <Text style={styles.sectionTitle}>Today's task</Text>
-            <View style={styles.items}>
-                {taskItems.map((item, index) => {
-                    return <Task item={item} key={index} index={index}/>
-                })}
-            </View>
+            <ScrollView showsVerticalScrollIndicator={false}>
+                <View style={styles.items}>
+                    {taskItems.map((item, index) => {
+                        return <Task item={item} key={index} index={index} />
+                    })}
+                </View>
+            </ScrollView>
         </View>
     )
 }
 
 const styles = StyleSheet.create({
     tasksWrapper: {
+        flex: 6,
         paddingTop: 40,
         paddingHorizontal: 20
     },
@@ -28,6 +31,6 @@ const styles = StyleSheet.create({
         color: '#333'
     },
     items: {
-        marginTop: 30
+        marginTop: 20
     },
 })  

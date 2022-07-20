@@ -30,6 +30,7 @@ export default function Task({ item, index }) {
           <Text style={{
             fontSize: 18,
             fontWeight: "400",
+            width: '80%',
             textDecorationLine: item.completed ? "line-through" : "none"
           }}>{item.text}</Text>
         </View>
@@ -48,12 +49,11 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    marginBottom: 20
+    marginBottom: 13
   },
   itemLeft: {
     flexDirection: 'row',
     alignItems: 'center',
-    flexWrap: 'wrap'
   },
   square: {
     height: 24,
